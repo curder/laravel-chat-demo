@@ -14,14 +14,14 @@
     <div class="row">
         <div class=" offset-3 col-6 mt-lg-5">
             <li class="list-group-item active">Chat Room</li>
-            <ul class="list-group chat-room">
-                <message v-for="(message, key) in chat.messages" :key="key">
+            <ul class="list-group chat-room" v-chat-scroll>
+                <message v-for="(message, key) in chat.messages" color="success" :key="key">
                     @{{ message }}
                 </message>
                 <input type="text"
                        v-model="message"
                        @keyup.enter="send"
-                       class="form-control form-control-lg"
+                       class="form-control"
                        placeholder="输入您想说的话 ..">
             </ul>
         </div>

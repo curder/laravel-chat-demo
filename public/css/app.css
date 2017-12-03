@@ -1,6 +1,7 @@
 @import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);.chat-room {
-  overflow-y: hidden;
-  max-height: 400px;
+  min-height: 250px;
+  overflow-y: auto;
+  max-height: 300px;
 }
 
 /*!
