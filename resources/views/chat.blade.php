@@ -11,25 +11,7 @@
 </head>
 <body>
 <div class="container" id="app">
-    <div class="row">
-        <div class=" offset-3 col-6 mt-lg-5">
-            <li class="list-group-item active">Chat Room</li>
-            <ul class="list-group chat-room" v-chat-scroll>
-                <message v-for="(message, key) in chat.messages"
-                         color="success"
-                         :username="chat.usernames[key]"
-                         :color="chat.colors[key]"
-                         :key="key">
-                    @{{ message }}
-                </message>
-                <input type="text"
-                       v-model="message"
-                       @keyup.enter="send"
-                       class="form-control"
-                       placeholder="输入您想说的话 ..">
-            </ul>
-        </div>
-    </div>
+    <message-box></message-box>
 </div>
 <script src="{{ mix('js/manifest.js') }}"></script>
 <script src="{{ mix('js/vendor.js') }}"></script>

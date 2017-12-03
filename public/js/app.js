@@ -1579,9 +1579,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    props: ['color', 'username'],
+    props: ['message', 'color', 'username', 'time'],
     computed: {
         className: function className() {
             return 'list-group-item-' + this.color;
@@ -1589,6 +1591,118 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         badgeClass: function badgeClass() {
             return 'badge-' + this.color;
         }
+    }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?{\"cacheDirectory\":true,\"presets\":[[\"env\",{\"modules\":false,\"targets\":{\"browsers\":[\"> 2%\"],\"uglify\":true}}]],\"plugins\":[\"transform-object-rest-spread\"]}!./node_modules/vue-loader/lib/selector.js?type=script&index=0&bustCache!./resources/assets/js/components/MessageBox.vue":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Message_vue__ = __webpack_require__("./resources/assets/js/components/Message.vue");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Message_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__Message_vue__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    data: function data() {
+        return {
+            message: '',
+            chat: {
+                messages: [],
+                usernames: [],
+                colors: [],
+                times: []
+            },
+            typing: ''
+        };
+    },
+
+    methods: {
+        send: function send() {
+            var _this = this;
+
+            if (this.message) {
+
+                axios.post('/send', {
+                    message: this.message
+                }).then(function (response) {
+                    _this.chat.messages.push(_this.message);
+                    _this.chat.usernames.push('You');
+                    _this.chat.colors.push('success');
+                    _this.chat.times.push(_this.getTime());
+                    // console.log(response);
+                    _this.message = '';
+                }).catch(function (error) {
+                    console.log(error);
+                });
+            }
+        },
+        getTime: function getTime() {
+            var time = new Date();
+            return time.getHours() + ':' + time.getMinutes();
+        }
+    },
+    mounted: function mounted() {
+        var _this2 = this;
+
+        Echo.private('chat').listen('ChatEvent', function (e) {
+            _this2.chat.messages.push(e.message);
+            _this2.chat.usernames.push(e.user.name);
+            _this2.chat.colors.push('warning');
+            _this2.chat.times.push(_this2.getTime());
+        }).listenForWhisper('typing', function (e) {
+            if (e.name != '') {
+                _this2.typing = 'typing...';
+            } else {
+                _this2.typing = '';
+            }
+        });
+    },
+
+    watch: {
+        message: function message() {
+            // console.log(this.message);
+            Echo.private('chat').whisper('typing', {
+                name: this.message
+            });
+        }
+    },
+    components: {
+        message: __WEBPACK_IMPORTED_MODULE_0__Message_vue___default.a
     }
 });
 
@@ -36516,12 +36630,13 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _c(
-      "li",
-      { staticClass: "list-group-item", class: _vm.className },
-      [_vm._t("default")],
-      2
-    ),
+    _c("li", { staticClass: "list-group-item", class: _vm.className }, [
+      _vm._v("\n        " + _vm._s(_vm.message) + "\n        "),
+      _c("span", {
+        staticClass: "chat-time",
+        domProps: { textContent: _vm._s(_vm.time) }
+      })
+    ]),
     _vm._v(" "),
     _c("small", { staticClass: "badge float-right", class: _vm.badgeClass }, [
       _vm._v(_vm._s(_vm.username))
@@ -36535,6 +36650,93 @@ if (false) {
   module.hot.accept()
   if (module.hot.data) {
     require("vue-hot-reload-api")      .rerender("data-v-0d3bc0a0", module.exports)
+  }
+}
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/template-compiler/index.js?{\"id\":\"data-v-1292bfbb\",\"hasScoped\":false,\"buble\":{\"transforms\":{}}}!./node_modules/vue-loader/lib/selector.js?type=template&index=0&bustCache!./resources/assets/js/components/MessageBox.vue":
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "row" }, [
+    _c("div", { staticClass: " offset-3 col-6 mt-5 col-sm-10 offset-sm-1" }, [
+      _c("div", { staticClass: "card" }, [
+        _c("div", { staticClass: "card-header" }, [_vm._v("聊天室")]),
+        _vm._v(" "),
+        _c("div", { staticClass: "card-block" }, [
+          _c("div", {
+            staticClass: "badge badge-pill badge-primary",
+            domProps: { textContent: _vm._s(_vm.typing) }
+          }),
+          _vm._v(" "),
+          _c(
+            "div",
+            {
+              directives: [{ name: "chat-scroll", rawName: "v-chat-scroll" }],
+              staticClass: "list-group chat-room"
+            },
+            _vm._l(_vm.chat.messages, function(message, key) {
+              return _c("message", {
+                key: key,
+                attrs: {
+                  color: "success",
+                  username: _vm.chat.usernames[key],
+                  color: _vm.chat.colors[key],
+                  time: _vm.chat.times[key],
+                  message: message
+                }
+              })
+            })
+          )
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "card-footer" }, [
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.message,
+                expression: "message"
+              }
+            ],
+            staticClass: "form-control",
+            attrs: { type: "text", placeholder: "输入您想说的话 .." },
+            domProps: { value: _vm.message },
+            on: {
+              keyup: function($event) {
+                if (
+                  !("button" in $event) &&
+                  _vm._k($event.keyCode, "enter", 13, $event.key)
+                ) {
+                  return null
+                }
+                _vm.send($event)
+              },
+              input: function($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.message = $event.target.value
+              }
+            }
+          })
+        ])
+      ])
+    ])
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-1292bfbb", module.exports)
   }
 }
 
@@ -36584,46 +36786,11 @@ window.Vue = __webpack_require__("./node_modules/vue/dist/vue.common.js");
 
 Vue.use(__WEBPACK_IMPORTED_MODULE_0_vue_chat_scroll___default.a);
 
-Vue.component('message', __webpack_require__("./resources/assets/js/components/Message.vue"));
+Vue.component('message-box', __webpack_require__("./resources/assets/js/components/MessageBox.vue"));
 
 var app = new Vue({
-    el: '#app',
-    data: {
-        message: '',
-        chat: {
-            messages: [],
-            usernames: [],
-            colors: []
-        }
-    },
-    methods: {
-        send: function send() {
-            var _this = this;
+    el: '#app'
 
-            if (this.message) {
-                this.chat.messages.push(this.message);
-                this.chat.usernames.push('You');
-                this.chat.colors.push('success');
-                axios.post('/send', {
-                    message: this.message
-                }).then(function (response) {
-                    // console.log(response);
-                    _this.message = '';
-                }).catch(function (error) {
-                    console.log(error);
-                });
-            }
-        }
-    },
-    mounted: function mounted() {
-        var _this2 = this;
-
-        Echo.private('chat').listen('ChatEvent', function (e) {
-            _this2.chat.messages.push(e.message);
-            _this2.chat.usernames.push(e.user.name);
-            _this2.chat.colors.push('warning');
-        });
-    }
 });
 
 /***/ }),
@@ -36731,6 +36898,55 @@ if (false) {(function () {
     hotAPI.createRecord("data-v-0d3bc0a0", Component.options)
   } else {
     hotAPI.reload("data-v-0d3bc0a0", Component.options)
+' + '  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+
+/***/ "./resources/assets/js/components/MessageBox.vue":
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__("./node_modules/vue-loader/lib/component-normalizer.js")
+/* script */
+var __vue_script__ = __webpack_require__("./node_modules/babel-loader/lib/index.js?{\"cacheDirectory\":true,\"presets\":[[\"env\",{\"modules\":false,\"targets\":{\"browsers\":[\"> 2%\"],\"uglify\":true}}]],\"plugins\":[\"transform-object-rest-spread\"]}!./node_modules/vue-loader/lib/selector.js?type=script&index=0&bustCache!./resources/assets/js/components/MessageBox.vue")
+/* template */
+var __vue_template__ = __webpack_require__("./node_modules/vue-loader/lib/template-compiler/index.js?{\"id\":\"data-v-1292bfbb\",\"hasScoped\":false,\"buble\":{\"transforms\":{}}}!./node_modules/vue-loader/lib/selector.js?type=template&index=0&bustCache!./resources/assets/js/components/MessageBox.vue")
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/components/MessageBox.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {  return key !== "default" && key.substr(0, 2) !== "__"})) {  console.error("named exports are not supported in *.vue files.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-1292bfbb", Component.options)
+  } else {
+    hotAPI.reload("data-v-1292bfbb", Component.options)
 ' + '  }
   module.hot.dispose(function (data) {
     disposed = true

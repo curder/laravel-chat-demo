@@ -1,7 +1,9 @@
 <template>
     <div>
         <li class="list-group-item" :class="className">
-            <slot></slot>
+            {{ message }}
+            <span class="chat-time"
+                  v-text="time"></span>
         </li>
         <small class="badge float-right" :class="badgeClass">{{ username }}</small>
     </div>
@@ -9,8 +11,10 @@
 <script>
     export default {
         props: [
+            'message',
             'color',
-            'username'
+            'username',
+            'time'
         ],
         computed: {
             className (){
