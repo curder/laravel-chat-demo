@@ -3,7 +3,8 @@
         <div class=" offset-3 col-6 mt-5 col-sm-10 offset-sm-1">
 
             <div class="card">
-                <div class="card-header">聊天室</div>
+                <div class="card-header"><strong>聊天室</strong> <span class="badge badge-danger badge-pill">{{ numberOfUsers }}</span>
+                </div>
                 <div class="card-block">
                     <div class="badge badge-pill badge-primary" v-text="typing"></div>
                     <div class="list-group chat-room" v-chat-scroll>
@@ -43,6 +44,7 @@
                     times: [],
                 },
                 typing: '',
+                numberOfUsers: 0
             }
         },
         methods: {
@@ -82,7 +84,24 @@
                     } else {
                         this.typing = '';
                     }
+                });
+
+            Echo.join('chat')
+                .here((users) => {
+                    this.numberOfUsers = users.length;
                 })
+                .joining((user) => {
+                    this.numberOfUsers += 1;
+                    this.$toaster.success(user.name + ' is joined the chat room.');
+                })
+                .leaving((user) => {
+
+                    this.numberOfUsers -= 1;
+                    this.$toaster.info(user.name + ' is leaved the chat room.');
+                })
+                .listen('NewMessage', (e) => {
+                    //
+                });
         },
         watch: {
             message(){
