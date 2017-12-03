@@ -14,6 +14,10 @@ if (mix.inProduction) {
     mix.version();
 }
 
+mix.browserSync({
+    proxy: 'laravel-chat-demo.dev'
+});
+
 mix.js('resources/assets/js/app.js', 'public/js')
     .sass('resources/assets/sass/app.scss', 'public/css')
     .extract(['vue']);
