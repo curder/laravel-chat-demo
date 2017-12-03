@@ -7,24 +7,60 @@ use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
+/**
+ * Class ChatController
+ * @package App\Http\Controllers
+ */
 class ChatController extends Controller
 {
+    /**
+     * ChatController constructor.
+     */
     public function __construct()
     {
         $this->middleware('auth')->only(['send', 'chat']);
     }
 
+    /**
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function chat()
+    {
+        return view('chat');
+    }
+
+    /**
+     * @param Request $request
+     */
     public function send(Request $request)
     {
         $message = $request->message;
 
-        $user = User::find(Auth::id());
-        event(new ChatEvent($message, $user));
-return $request->all();
+        $this->saveToSession($request);
+        event(new ChatEvent($message, Auth::user()));
     }
 
-    public function chat()
+    /**
+     * @param Request $request
+     * @return mixed
+     */
+    public function saveToSession(Request $request)
     {
-        return view('chat');
+        session()->put('chat', $request->chat);
+        return $this->getOldMessage();
+    }
+
+    /**
+     * @return \Illuminate\Session\SessionManager|\Illuminate\Session\Store|mixed
+     */
+    public function getOldMessage()
+    {
+        return session('chat');
+    }
+
+
+    public function deleteSession()
+    {
+        session()->forget('chat');
     }
 }

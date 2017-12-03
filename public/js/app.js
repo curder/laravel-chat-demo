@@ -1636,6 +1636,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -1660,7 +1663,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             if (this.message) {
 
                 axios.post('/send', {
-                    message: this.message
+                    message: this.message,
+                    chat: this.chat
                 }).then(function (response) {
                     _this.chat.messages.push(_this.message);
                     _this.chat.usernames.push('You');
@@ -1676,33 +1680,59 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         getTime: function getTime() {
             var time = new Date();
             return time.getHours() + ':' + time.getMinutes();
+        },
+        getOldMessages: function getOldMessages() {
+            var _this2 = this;
+
+            // 获取之前的聊天记录
+            axios.get('/getOldMessage').then(function (response) {
+                if (response.data != '') {
+                    _this2.chat = response.data;
+                }
+            }).catch(function (error) {});
+        },
+        deleteHistory: function deleteHistory() {
+            var _this3 = this;
+
+            axios.delete('/deleteSession').then(function (response) {
+                _this3.$toaster.success('chat history is deleted');
+                _this3.chat = {};
+            }).catch(function (error) {});
         }
     },
     mounted: function mounted() {
-        var _this2 = this;
+        var _this4 = this;
 
         Echo.private('chat').listen('ChatEvent', function (e) {
-            _this2.chat.messages.push(e.message);
-            _this2.chat.usernames.push(e.user.name);
-            _this2.chat.colors.push('warning');
-            _this2.chat.times.push(_this2.getTime());
+            _this4.chat.messages.push(e.message);
+            _this4.chat.usernames.push(e.user.name);
+            _this4.chat.colors.push('warning');
+            _this4.chat.times.push(_this4.getTime());
+            console.log(_this4.chat);
+            axios.post('/saveToSession', { // 保存聊天记录到Session
+                chat: _this4.chat
+            }).then(function (response) {
+                console.log(response);
+            }).catch(function (error) {
+                console.log(error);
+            });
         }).listenForWhisper('typing', function (e) {
             if (e.name != '') {
-                _this2.typing = 'typing...';
+                _this4.typing = 'typing...';
             } else {
-                _this2.typing = '';
+                _this4.typing = '';
             }
         });
 
         Echo.join('chat').here(function (users) {
-            _this2.numberOfUsers = users.length;
+            _this4.getOldMessages();
+            _this4.numberOfUsers = users.length;
         }).joining(function (user) {
-            _this2.numberOfUsers += 1;
-            _this2.$toaster.success(user.name + ' is joined the chat room.');
+            _this4.numberOfUsers += 1;
+            _this4.$toaster.success(user.name + ' is joined the chat room.');
         }).leaving(function (user) {
-
-            _this2.numberOfUsers -= 1;
-            _this2.$toaster.info(user.name + ' is leaved the chat room.');
+            _this4.numberOfUsers -= 1;
+            _this4.$toaster.info(user.name + ' is leaved the chat room.');
         }).listen('NewMessage', function (e) {
             //
         });
@@ -37278,7 +37308,16 @@ var render = function() {
           _vm._v(" "),
           _c("span", { staticClass: "badge badge-danger badge-pill" }, [
             _vm._v(_vm._s(_vm.numberOfUsers))
-          ])
+          ]),
+          _vm._v(" "),
+          _c(
+            "span",
+            {
+              staticClass: "btn btn-warning btn-sm",
+              on: { click: _vm.deleteHistory }
+            },
+            [_vm._v("清空聊天记录")]
+          )
         ]),
         _vm._v(" "),
         _c("div", { staticClass: "card-block" }, [

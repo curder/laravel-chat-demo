@@ -3,7 +3,10 @@
         <div class=" offset-3 col-6 mt-5 col-sm-10 offset-sm-1">
 
             <div class="card">
-                <div class="card-header"><strong>聊天室</strong> <span class="badge badge-danger badge-pill">{{ numberOfUsers }}</span>
+                <div class="card-header">
+                    <strong>聊天室</strong>
+                    <span class="badge badge-danger badge-pill">{{ numberOfUsers }}</span>
+                    <span class="btn btn-warning btn-sm" @click="deleteHistory">清空聊天记录</span>
                 </div>
                 <div class="card-block">
                     <div class="badge badge-pill badge-primary" v-text="typing"></div>
@@ -52,7 +55,8 @@
                 if (this.message) {
 
                     axios.post('/send', {
-                        message: this.message
+                        message: this.message,
+                        chat: this.chat
                     }).then(response => {
                         this.chat.messages.push(this.message);
                         this.chat.usernames.push('You');
@@ -68,6 +72,23 @@
             getTime(){
                 let time = new Date();
                 return time.getHours() + ':' + time.getMinutes();
+            },
+            getOldMessages(){ // 获取之前的聊天记录
+                axios.get('/getOldMessage').then(response => {
+                    if (response.data != '') {
+                        this.chat = response.data;
+                    }
+                }).catch(error => {
+
+                });
+            },
+            deleteHistory(){
+                axios.delete('/deleteSession').then(response => {
+                    this.$toaster.success('chat history is deleted');
+                    this.chat = {};
+                }).catch(error => {
+
+                });
             }
         },
         mounted(){
@@ -77,6 +98,14 @@
                     this.chat.usernames.push(e.user.name);
                     this.chat.colors.push('warning');
                     this.chat.times.push(this.getTime());
+                    console.log(this.chat);
+                    axios.post('/saveToSession', { // 保存聊天记录到Session
+                        chat: this.chat
+                    }).then(response => {
+                        console.log(response)
+                    }).catch(error => {
+                        console.log(error)
+                    });
                 })
                 .listenForWhisper('typing', (e) => {
                     if (e.name != '') {
@@ -88,6 +117,7 @@
 
             Echo.join('chat')
                 .here((users) => {
+                    this.getOldMessages();
                     this.numberOfUsers = users.length;
                 })
                 .joining((user) => {
@@ -95,7 +125,6 @@
                     this.$toaster.success(user.name + ' is joined the chat room.');
                 })
                 .leaving((user) => {
-
                     this.numberOfUsers -= 1;
                     this.$toaster.info(user.name + ' is leaved the chat room.');
                 })
