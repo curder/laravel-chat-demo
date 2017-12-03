@@ -15,7 +15,11 @@
         <div class=" offset-3 col-6 mt-lg-5">
             <li class="list-group-item active">Chat Room</li>
             <ul class="list-group chat-room" v-chat-scroll>
-                <message v-for="(message, key) in chat.messages" color="success" :key="key">
+                <message v-for="(message, key) in chat.messages"
+                         color="success"
+                         :username="chat.usernames[key]"
+                         :color="chat.colors[key]"
+                         :key="key">
                     @{{ message }}
                 </message>
                 <input type="text"
