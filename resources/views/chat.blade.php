@@ -13,6 +13,7 @@
 <div class="container" id="app">
     <message-box></message-box>
 </div>
+<script src="//cdn.bootcss.com/socket.io/2.0.4/socket.io.js"></script>
 <script src="{{ mix('js/manifest.js') }}"></script>
 <script src="{{ mix('js/vendor.js') }}"></script>
 <script src="{{ mix('js/app.js') }}"></script>
