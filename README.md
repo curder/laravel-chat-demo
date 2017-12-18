@@ -3,14 +3,17 @@
 This project is about laravel reset-ful api demo.
 
 ```
-
 git clone https://github.com/curder/laravel-chat-demo.git
 
 cd laravel-chat-demo
 
-php artisan key:generate
+composer install
 
 cp .env.example .env
+
+php artisan key:generate
+
+touch database/database.sqlite
 ```
 
 change your database connection info, and run `php artisan migrate:refresh --seed` and through by this url `http://laravel-chat-demo.dev/register`  register some new user.
