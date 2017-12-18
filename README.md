@@ -1,3 +1,6 @@
+
+![](./public/chat-room.png)
+
 ## Introduction
 
 This project is about laravel reset-ful api demo.
@@ -28,7 +31,7 @@ PUSHER_APP_KEY=
 PUSHER_APP_SECRET=
 PUSHER_APP_CLUSTER=
 ```
-input them into .env file.
+input them into `.env` file.
 
 ## Some Url
 
