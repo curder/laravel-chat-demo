@@ -22,10 +22,8 @@
         "lodash": "^4.17.4",
         "pusher-js": "^4.2.1",
         "ssri": "^8.0.1",
+        "v-toaster": "^1.0.3",
         "vue": "^2.5.7",
         "vue-chat-scroll": "^1.2.1"
-    },
-    "dependencies": {
-        "v-toaster": "^1.0.3"
     }
 }
