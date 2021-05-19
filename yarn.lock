@@ -2852,9 +2852,9 @@ ee-first@1.1.1:
   integrity sha1-WQxhFWsK4vTwJVcyoViyZrxWsh0=
 
 electron-to-chromium@^1.2.7, electron-to-chromium@^1.3.30, electron-to-chromium@^1.3.47:
-  version "1.3.730"
-  resolved "https://registry.nlark.com/electron-to-chromium/download/electron-to-chromium-1.3.730.tgz?cache=0&sync_timestamp=1621303494728&other_urls=https%3A%2F%2Fregistry.nlark.com%2Felectron-to-chromium%2Fdownload%2Felectron-to-chromium-1.3.730.tgz#6e1fad8f250827f5524672e572f823b34a6417e1"
-  integrity sha1-bh+tjyUIJ/VSRnLlcvgjs0pkF+E=
+  version "1.3.731"
+  resolved "https://registry.nlark.com/electron-to-chromium/download/electron-to-chromium-1.3.731.tgz?cache=0&sync_timestamp=1621375725554&other_urls=https%3A%2F%2Fregistry.nlark.com%2Felectron-to-chromium%2Fdownload%2Felectron-to-chromium-1.3.731.tgz#9f17f7e16f798eaddb21409d80aa755b5b5053dc"
+  integrity sha1-nxf34W95jq3bIUCdgKp1W1tQU9w=
 
 elliptic@^6.5.3:
   version "6.5.4"
@@ -8855,7 +8855,7 @@ uglify-es@^3.3.4:
 
 uglify-js@3.4.x:
   version "3.4.10"
-  resolved "https://registry.nlark.com/uglify-js/download/uglify-js-3.4.10.tgz?cache=0&sync_timestamp=1620683515577&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fuglify-js%2Fdownload%2Fuglify-js-3.4.10.tgz#9ad9563d8eb3acdfb8d38597d2af1d815f6a755f"
+  resolved "https://registry.nlark.com/uglify-js/download/uglify-js-3.4.10.tgz?cache=0&sync_timestamp=1621369101035&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fuglify-js%2Fdownload%2Fuglify-js-3.4.10.tgz#9ad9563d8eb3acdfb8d38597d2af1d815f6a755f"
   integrity sha1-mtlWPY6zrN+404WX0q8dgV9qdV8=
   dependencies:
     commander "~2.19.0"
@@ -8863,7 +8863,7 @@ uglify-js@3.4.x:
 
 uglify-js@^2.8.28, uglify-js@^2.8.29:
   version "2.8.29"
-  resolved "https://registry.nlark.com/uglify-js/download/uglify-js-2.8.29.tgz?cache=0&sync_timestamp=1620683515577&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fuglify-js%2Fdownload%2Fuglify-js-2.8.29.tgz#29c5733148057bb4e1f75df35b7a9cb72e6a59dd"
+  resolved "https://registry.nlark.com/uglify-js/download/uglify-js-2.8.29.tgz?cache=0&sync_timestamp=1621369101035&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fuglify-js%2Fdownload%2Fuglify-js-2.8.29.tgz#29c5733148057bb4e1f75df35b7a9cb72e6a59dd"
   integrity sha1-KcVzMUgFe7Th913zW3qcty5qWd0=
   dependencies:
     source-map "~0.5.1"
