@@ -29,12 +29,12 @@ acorn-dynamic-import@^2.0.0:
 
 acorn@^4.0.3:
   version "4.0.13"
-  resolved "https://registry.nlark.com/acorn/download/acorn-4.0.13.tgz?cache=0&sync_timestamp=1622440161899&other_urls=https%3A%2F%2Fregistry.nlark.com%2Facorn%2Fdownload%2Facorn-4.0.13.tgz#105495ae5361d697bd195c825192e1ad7f253787"
+  resolved "https://registry.nlark.com/acorn/download/acorn-4.0.13.tgz?cache=0&sync_timestamp=1623419719979&other_urls=https%3A%2F%2Fregistry.nlark.com%2Facorn%2Fdownload%2Facorn-4.0.13.tgz#105495ae5361d697bd195c825192e1ad7f253787"
   integrity sha1-EFSVrlNh1pe9GVyCUZLhrX8lN4c=
 
 acorn@^5.0.0:
   version "5.7.4"
-  resolved "https://registry.nlark.com/acorn/download/acorn-5.7.4.tgz?cache=0&sync_timestamp=1622440161899&other_urls=https%3A%2F%2Fregistry.nlark.com%2Facorn%2Fdownload%2Facorn-5.7.4.tgz#3e8d8a9947d0599a1796d10225d7432f4a4acf5e"
+  resolved "https://registry.nlark.com/acorn/download/acorn-5.7.4.tgz?cache=0&sync_timestamp=1623419719979&other_urls=https%3A%2F%2Fregistry.nlark.com%2Facorn%2Fdownload%2Facorn-5.7.4.tgz#3e8d8a9947d0599a1796d10225d7432f4a4acf5e"
   integrity sha1-Po2KmUfQWZoXltECJddDL0pKz14=
 
 adjust-sourcemap-loader@^1.1.0:
@@ -1567,14 +1567,14 @@ caniuse-api@^1.5.2:
     lodash.uniq "^4.5.0"
 
 caniuse-db@^1.0.30000529, caniuse-db@^1.0.30000634, caniuse-db@^1.0.30000639:
-  version "1.0.30001236"
-  resolved "https://registry.nlark.com/caniuse-db/download/caniuse-db-1.0.30001236.tgz?cache=0&sync_timestamp=1623217417284&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fcaniuse-db%2Fdownload%2Fcaniuse-db-1.0.30001236.tgz#b543fa06fc5ae3c8d7256d44bcc3394beda069f8"
-  integrity sha1-tUP6Bvxa48jXJW1EvMM5S+2gafg=
+  version "1.0.30001237"
+  resolved "https://registry.nlark.com/caniuse-db/download/caniuse-db-1.0.30001237.tgz#438f81e11af5fe7e3141c457b413a0589c134175"
+  integrity sha1-Q4+B4Rr1/n4xQcRXtBOgWJwTQXU=
 
 caniuse-lite@^1.0.30000792, caniuse-lite@^1.0.30000805, caniuse-lite@^1.0.30000844:
-  version "1.0.30001236"
-  resolved "https://registry.nlark.com/caniuse-lite/download/caniuse-lite-1.0.30001236.tgz#0a80de4cdf62e1770bb46a30d884fc8d633e3958"
-  integrity sha1-CoDeTN9i4XcLtGow2IT8jWM+OVg=
+  version "1.0.30001237"
+  resolved "https://registry.nlark.com/caniuse-lite/download/caniuse-lite-1.0.30001237.tgz?cache=0&sync_timestamp=1623477010737&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fcaniuse-lite%2Fdownload%2Fcaniuse-lite-1.0.30001237.tgz#4b7783661515b8e7151fc6376cfd97f0e427b9e5"
+  integrity sha1-S3eDZhUVuOcVH8Y3bP2X8OQnueU=
 
 capture-stack-trace@^1.0.0:
   version "1.0.1"
@@ -2471,7 +2471,7 @@ decompress-tar@^4.0.0, decompress-tar@^4.1.0, decompress-tar@^4.1.1:
 
 decompress-tarbz2@^3.0.0:
   version "3.1.0"
-  resolved "https://registry.npm.taobao.org/decompress-tarbz2/download/decompress-tarbz2-3.1.0.tgz#8b23935681355f9f189d87256a0f8bdd96d9666d"
+  resolved "https://registry.nlark.com/decompress-tarbz2/download/decompress-tarbz2-3.1.0.tgz#8b23935681355f9f189d87256a0f8bdd96d9666d"
   integrity sha1-iyOTVoE1X58YnYclag+L3ZbZZm0=
   dependencies:
     is-bzip2 "^1.0.0"
@@ -2484,7 +2484,7 @@ decompress-tarbz2@^3.0.0:
 
 decompress-tarbz2@^4.0.0:
   version "4.1.1"
-  resolved "https://registry.npm.taobao.org/decompress-tarbz2/download/decompress-tarbz2-4.1.1.tgz#3082a5b880ea4043816349f378b56c516be1a39b"
+  resolved "https://registry.nlark.com/decompress-tarbz2/download/decompress-tarbz2-4.1.1.tgz#3082a5b880ea4043816349f378b56c516be1a39b"
   integrity sha1-MIKluIDqQEOBY0nzeLVsUWvho5s=
   dependencies:
     decompress-tar "^4.1.0"
@@ -6843,7 +6843,7 @@ postcss-load-plugins@^2.3.0:
 
 postcss-loader@^2.0.5:
   version "2.1.6"
-  resolved "https://registry.nlark.com/postcss-loader/download/postcss-loader-2.1.6.tgz#1d7dd7b17c6ba234b9bed5af13e0bea40a42d740"
+  resolved "https://registry.nlark.com/postcss-loader/download/postcss-loader-2.1.6.tgz?cache=0&sync_timestamp=1623350008884&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fpostcss-loader%2Fdownload%2Fpostcss-loader-2.1.6.tgz#1d7dd7b17c6ba234b9bed5af13e0bea40a42d740"
   integrity sha1-HX3XsXxrojS5vtWvE+C+pApC10A=
   dependencies:
     loader-utils "^1.1.0"
@@ -7044,7 +7044,7 @@ postcss-zindex@^2.0.1:
 
 postcss@^5.0.10, postcss@^5.0.11, postcss@^5.0.12, postcss@^5.0.13, postcss@^5.0.14, postcss@^5.0.16, postcss@^5.0.2, postcss@^5.0.4, postcss@^5.0.5, postcss@^5.0.6, postcss@^5.0.8, postcss@^5.2.16:
   version "5.2.18"
-  resolved "https://registry.nlark.com/postcss/download/postcss-5.2.18.tgz?cache=0&sync_timestamp=1623282002530&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fpostcss%2Fdownload%2Fpostcss-5.2.18.tgz#badfa1497d46244f6390f58b319830d9107853c5"
+  resolved "https://registry.nlark.com/postcss/download/postcss-5.2.18.tgz?cache=0&sync_timestamp=1623648899817&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fpostcss%2Fdownload%2Fpostcss-5.2.18.tgz#badfa1497d46244f6390f58b319830d9107853c5"
   integrity sha1-ut+hSX1GJE9jkPWLMZgw2RB4U8U=
   dependencies:
     chalk "^1.1.3"
@@ -7054,7 +7054,7 @@ postcss@^5.0.10, postcss@^5.0.11, postcss@^5.0.12, postcss@^5.0.13, postcss@^5.0
 
 postcss@^6.0.0, postcss@^6.0.1, postcss@^6.0.17, postcss@^6.0.8:
   version "6.0.23"
-  resolved "https://registry.nlark.com/postcss/download/postcss-6.0.23.tgz?cache=0&sync_timestamp=1623282002530&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fpostcss%2Fdownload%2Fpostcss-6.0.23.tgz#61c82cc328ac60e677645f979054eb98bc0e3324"
+  resolved "https://registry.nlark.com/postcss/download/postcss-6.0.23.tgz?cache=0&sync_timestamp=1623648899817&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fpostcss%2Fdownload%2Fpostcss-6.0.23.tgz#61c82cc328ac60e677645f979054eb98bc0e3324"
   integrity sha1-YcgswyisYOZ3ZF+XkFTrmLwOMyQ=
   dependencies:
     chalk "^2.4.1"
@@ -7711,7 +7711,7 @@ sass-graph@2.2.5:
 
 sass-loader@^6.0.5:
   version "6.0.7"
-  resolved "https://registry.nlark.com/sass-loader/download/sass-loader-6.0.7.tgz?cache=0&sync_timestamp=1622562247905&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fsass-loader%2Fdownload%2Fsass-loader-6.0.7.tgz#dd2fdb3e7eeff4a53f35ba6ac408715488353d00"
+  resolved "https://registry.nlark.com/sass-loader/download/sass-loader-6.0.7.tgz#dd2fdb3e7eeff4a53f35ba6ac408715488353d00"
   integrity sha1-3S/bPn7v9KU/NbpqxAhxVIg1PQA=
   dependencies:
     clone-deep "^2.0.1"
@@ -8808,12 +8808,12 @@ tweetnacl-util@^0.15.0:
 
 tweetnacl@^0.14.3, tweetnacl@~0.14.0:
   version "0.14.5"
-  resolved "https://registry.npm.taobao.org/tweetnacl/download/tweetnacl-0.14.5.tgz#5ae68177f192d4456269d108afa93ff8743f4f64"
+  resolved "https://registry.nlark.com/tweetnacl/download/tweetnacl-0.14.5.tgz#5ae68177f192d4456269d108afa93ff8743f4f64"
   integrity sha1-WuaBd/GS1EViadEIr6k/+HQ/T2Q=
 
 tweetnacl@^1.0.0:
   version "1.0.3"
-  resolved "https://registry.npm.taobao.org/tweetnacl/download/tweetnacl-1.0.3.tgz#ac0af71680458d8a6378d0d0d050ab1407d35596"
+  resolved "https://registry.nlark.com/tweetnacl/download/tweetnacl-1.0.3.tgz#ac0af71680458d8a6378d0d0d050ab1407d35596"
   integrity sha1-rAr3FoBFjYpjeNDQ0FCrFAfTVZY=
 
 type-is@~1.6.17, type-is@~1.6.18:
