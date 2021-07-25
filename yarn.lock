@@ -3988,7 +3988,7 @@ glogg@^1.0.0:
 
 got@^5.0.0:
   version "5.7.1"
-  resolved "https://registry.nlark.com/got/download/got-5.7.1.tgz?cache=0&sync_timestamp=1626960074447&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fgot%2Fdownload%2Fgot-5.7.1.tgz#5f81635a61e4a6589f180569ea4e381680a51f35"
+  resolved "https://registry.nlark.com/got/download/got-5.7.1.tgz?cache=0&sync_timestamp=1627220400881&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fgot%2Fdownload%2Fgot-5.7.1.tgz#5f81635a61e4a6589f180569ea4e381680a51f35"
   integrity sha1-X4FjWmHkplifGAVp6k44FoClHzU=
   dependencies:
     create-error-class "^3.0.1"
@@ -4009,7 +4009,7 @@ got@^5.0.0:
 
 got@^7.0.0:
   version "7.1.0"
-  resolved "https://registry.nlark.com/got/download/got-7.1.0.tgz?cache=0&sync_timestamp=1626960074447&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fgot%2Fdownload%2Fgot-7.1.0.tgz#05450fd84094e6bbea56f451a43a9c289166385a"
+  resolved "https://registry.nlark.com/got/download/got-7.1.0.tgz?cache=0&sync_timestamp=1627220400881&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fgot%2Fdownload%2Fgot-7.1.0.tgz#05450fd84094e6bbea56f451a43a9c289166385a"
   integrity sha1-BUUP2ECU5rvqVvRRpDqcKJFmOFo=
   dependencies:
     decompress-response "^3.2.0"
@@ -8917,7 +8917,7 @@ unbox-primitive@^1.0.1:
 
 unbzip2-stream@^1.0.9:
   version "1.4.3"
-  resolved "https://registry.nlark.com/unbzip2-stream/download/unbzip2-stream-1.4.3.tgz#b0da04c4371311df771cdc215e87f2130991ace7"
+  resolved "https://registry.npm.taobao.org/unbzip2-stream/download/unbzip2-stream-1.4.3.tgz#b0da04c4371311df771cdc215e87f2130991ace7"
   integrity sha1-sNoExDcTEd93HNwhXofyEwmRrOc=
   dependencies:
     buffer "^5.2.1"
@@ -9023,9 +9023,9 @@ url-parse-lax@^1.0.0:
     prepend-http "^1.0.1"
 
 url-parse@^1.1.8, url-parse@^1.4.3:
-  version "1.5.1"
-  resolved "https://registry.nlark.com/url-parse/download/url-parse-1.5.1.tgz#d5fa9890af8a5e1f274a2c98376510f6425f6e3b"
-  integrity sha1-1fqYkK+KXh8nSiyYN2UQ9kJfbjs=
+  version "1.5.3"
+  resolved "https://registry.nlark.com/url-parse/download/url-parse-1.5.3.tgz?cache=0&sync_timestamp=1627252196051&other_urls=https%3A%2F%2Fregistry.nlark.com%2Furl-parse%2Fdownload%2Furl-parse-1.5.3.tgz#71c1303d38fb6639ade183c2992c8cc0686df862"
+  integrity sha1-ccEwPTj7Zjmt4YPCmSyMwGht+GI=
   dependencies:
     querystringify "^2.1.1"
     requires-port "^1.0.0"
