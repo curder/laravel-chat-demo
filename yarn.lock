@@ -3507,12 +3507,12 @@ filename-regex@^2.0.0:
 
 filename-reserved-regex@^1.0.0:
   version "1.0.0"
-  resolved "https://registry.npm.taobao.org/filename-reserved-regex/download/filename-reserved-regex-1.0.0.tgz#e61cf805f0de1c984567d0386dc5df50ee5af7e4"
+  resolved "https://registry.nlark.com/filename-reserved-regex/download/filename-reserved-regex-1.0.0.tgz#e61cf805f0de1c984567d0386dc5df50ee5af7e4"
   integrity sha1-5hz4BfDeHJhFZ9A4bcXfUO5a9+Q=
 
 filename-reserved-regex@^2.0.0:
   version "2.0.0"
-  resolved "https://registry.npm.taobao.org/filename-reserved-regex/download/filename-reserved-regex-2.0.0.tgz#abf73dfab735d045440abfea2d91f389ebbfa229"
+  resolved "https://registry.nlark.com/filename-reserved-regex/download/filename-reserved-regex-2.0.0.tgz#abf73dfab735d045440abfea2d91f389ebbfa229"
   integrity sha1-q/c9+rc10EVECr/qLZHzieu/oik=
 
 filenamify@^1.0.1:
@@ -3638,7 +3638,7 @@ find-versions@^1.0.0:
 
 first-chunk-stream@^1.0.0:
   version "1.0.0"
-  resolved "https://registry.npm.taobao.org/first-chunk-stream/download/first-chunk-stream-1.0.0.tgz#59bfb50cd905f60d7c394cd3d9acaab4e6ad934e"
+  resolved "https://registry.nlark.com/first-chunk-stream/download/first-chunk-stream-1.0.0.tgz?cache=0&sync_timestamp=1629064555688&other_urls=https%3A%2F%2Fregistry.nlark.com%2Ffirst-chunk-stream%2Fdownload%2Ffirst-chunk-stream-1.0.0.tgz#59bfb50cd905f60d7c394cd3d9acaab4e6ad934e"
   integrity sha1-Wb+1DNkF9g18OUzT2ayqtOatk04=
 
 flatten@^1.0.2:
@@ -8467,7 +8467,7 @@ strip-ansi@^6.0.0:
 
 strip-bom-stream@^1.0.0:
   version "1.0.0"
-  resolved "https://registry.npm.taobao.org/strip-bom-stream/download/strip-bom-stream-1.0.0.tgz#e7144398577d51a6bed0fa1994fa05f43fd988ee"
+  resolved "https://registry.nlark.com/strip-bom-stream/download/strip-bom-stream-1.0.0.tgz#e7144398577d51a6bed0fa1994fa05f43fd988ee"
   integrity sha1-5xRDmFd9Uaa+0PoZlPoF9D/ZiO4=
   dependencies:
     first-chunk-stream "^1.0.0"
